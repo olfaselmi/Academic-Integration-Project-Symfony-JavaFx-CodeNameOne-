@@ -1,0 +1,7 @@
+yamilovs_sms:
+    providers:
+        message_bird_provider_doc: # your custom provider name
+            message_bird:
+                access_key: 'ZoR7MjnB7bQRC4E5QqytKbA5v'
+                originator: '+21626104108'
+                type: sms

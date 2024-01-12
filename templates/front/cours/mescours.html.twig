@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/courses.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/courses_responsive.css')}}">
+
+{% endblock %}
+{% block content %}
+    <!-- Home -->
+
+    <div class="home">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('front/images/courses.jpg')}}" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <br>
+                            <br>
+                            <div class="home_title">Mes Cours</div>
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Mes Cours</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses -->
+
+    <div class="courses">
+        <div class="container">
+
+
+
+
+            <div class="row courses_row">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTables" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Contenu</th>
+                            <th>Enseignant</th>
+                            <th>Place Disponible</th>
+                            <th>Date Debut</th>
+                            <th>Date Fin</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Contenu</th>
+                            <th>Enseignant</th>
+                            <th>Place Disponible</th>
+                            <th>Date Debut</th>
+                            <th>Date Fin</th>
+                            <th></th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% for etudcor in liste %}
+                            <tr>
+                                <td>{{ etudcor.cours.titre }}</td>
+                                <td>{{ etudcor.cours.contenu }} </td>
+                                <td>{{ etudcor.cours.enseignant }}</td>
+                                <td>{{ etudcor.cours.placeDispo }}</td>
+                                <td>{{ etudcor.cours.dateD | date('d-m-Y') }}</td>
+                                <td>{{ etudcor.cours.dateF | date('d-m-Y') }}</td>
+                                <td>
+                                    <a href="{{ path('courses_show', {'id': etudcor.cours.id}) }}" class="btn btn-primary">Afficher </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

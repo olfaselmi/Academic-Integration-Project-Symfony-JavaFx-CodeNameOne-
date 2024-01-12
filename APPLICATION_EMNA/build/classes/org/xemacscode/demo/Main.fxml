@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="386.0" prefWidth="764.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="org.xemacscode.demo.MainController">
+   <children>
+      <VBox layoutX="14.0" layoutY="20.0" prefHeight="284.0" prefWidth="104.0" spacing="21.0">
+         <children>
+            <Label text="ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="contenu">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Date debut ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Date finale">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Place disponible">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="ID enseignant ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="emploi">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox layoutX="118.0" layoutY="20.0" prefHeight="284.0" prefWidth="163.0" spacing="15.0">
+         <children>
+            <TextField fx:id="tfid" />
+            <TextField fx:id="tfcontenu" />
+            <TextField fx:id="tfdateD" />
+            <TextField fx:id="tfdateF" />
+            <TextField fx:id="tfplaceDispo" />
+            <TextField fx:id="tfidEnseig" />
+            <TextField fx:id="tfemploi" />
+         </children>
+      </VBox>
+      <TableView fx:id="tvCours" layoutX="300.0" layoutY="10.0" prefHeight="343.0" prefWidth="457.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="46.0" text="ID" />
+          <TableColumn fx:id="colontenu" prefWidth="59.0" text="Contenu" />
+            <TableColumn fx:id="coldateD" prefWidth="72.0" text="Date debut" />
+            <TableColumn fx:id="coldateF" prefWidth="65.0" text="Date fin" />
+            <TableColumn fx:id="colplaceDispo" prefWidth="73.0" text="Place dispo" />
+            <TableColumn fx:id="colidEnseig" prefWidth="73.0" text="ID enseign" />
+            <TableColumn fx:id="colemploi" prefWidth="73.0" text="Emploi" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnAjouter" layoutX="24.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="61.0" text="Ajouter" textFill="#106516" />
+      <Button fx:id="btnModifier" layoutX="111.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="67.0" text="Modifier" textFill="#351abf" />
+      <Button fx:id="btnSupprimer" layoutX="200.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Supprimer" textFill="#bc1818" />
+   </children>
+</AnchorPane>

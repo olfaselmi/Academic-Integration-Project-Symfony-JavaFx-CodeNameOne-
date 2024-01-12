@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane style="-fx-background-radius: 20;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.front.HomepageController">
+   <children>
+      <AnchorPane prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: f1f1f1; -fx-background-radius: 15;">
+         <children>
+            <Pane layoutX="629.0" layoutY="1.0" prefHeight="76.0" prefWidth="421.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
+               <children>
+                  <Label fx:id="userlabel" layoutX="14.0" layoutY="25.0" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#f2f2f2" layoutX="271.0" layoutY="38.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <ImageView fx:id="logout" fitHeight="56.0" fitWidth="56.0" layoutX="351.0" layoutY="10.0" onMousePressed="#logout" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/logout.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <VBox prefHeight="544.0" prefWidth="74.0" style="-fx-background-radius: 15 0 0 15;" styleClass="button7" stylesheets="@fullpackstyling.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Pane prefHeight="79.0" prefWidth="74.0" style="-fx-background-radius: 15 0 15 15;">
+                     <children>
+                        <Label />
+                        <Button contentDisplay="TOP" layoutY="21.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" textFill="WHITE">
+                           <opaqueInsets>
+                              <Insets bottom="25.0" />
+                           </opaqueInsets>
+                        </Button>
+                        <ImageView fitHeight="30.0" fitWidth="34.0" layoutX="23.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/notification-01.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="nbnotif" layoutX="41.0" layoutY="31.0" prefHeight="17.0" prefWidth="11.0" text="1">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Button fx:id="profile" contentDisplay="TOP" mnemonicParsing="false" onAction="#account" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Profile" textFill="WHITE">
+                     <graphic>
+                        <ImageView fx:id="btnprofile" fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/user-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets bottom="25.0" />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Home" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/home-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Donate" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/donate1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="142.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Events" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/event-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@ullpackstyling.css" text="Blog" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/blog-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="FAQ" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/faq-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="Housing" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/housing-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text="News" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/news-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="TOP" ellipsisString="" mnemonicParsing="false" prefHeight="66.0" prefWidth="74.0" styleClass="button3" stylesheets="@fullpackstyling.css" text=" Goods" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/goods-01.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="25.0" />
+               </padding>
+            </VBox>
+            <AnchorPane layoutX="91.0" layoutY="69.0" prefHeight="622.0" prefWidth="954.0" style="-fx-background-color: f1f1f1f; -fx-background-radius: 0;" stylesheets="@fullpackstyling.css">
+               <children>
+                  <Label layoutX="39.0" layoutY="34.0" text="Welcome to" textFill="#5b5b5b">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="188.0" layoutY="35.0" text="E-ducation+" textFill="#feaf31">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="81.0" prefHeight="29.0" prefWidth="361.0" textFill="#5b5b5b">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="631.0" layoutY="46.0" prefHeight="253.0" prefWidth="242.0" style="-fx-background-radius: 20;" styleClass="linear-grad" stylesheets="@fullpackstyling.css">
+                     <children>
+                        <Label layoutX="33.0" layoutY="132.0" prefHeight="29.0" prefWidth="220.0" text="Get Learning" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="53.0" layoutY="174.0" text=" still needed" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="85.0" fitWidth="82.0" layoutX="75.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/donate1.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Line endX="100.0" layoutX="445.0" layoutY="54.0" startX="100.0" startY="515.0" stroke="#b9b1b1" strokeDashOffset="2.0" />
+                  <BorderPane layoutX="569.0" layoutY="404.0" prefHeight="66.0" prefWidth="270.0" />
+                  <Label alignment="CENTER" layoutX="590.0" layoutY="409.0" prefHeight="176.0" prefWidth="324.0" text="E-ducation+ est un type de formation en ligne et à distance qui utilise Internet et les nouvelles technologies digitales, dans le but d’améliorer les processus d’apprentissage. Ce type d’enseignement permet aux apprenants de pouvoir se former à distance, quand ils le souhaitent et d’avoir accès à différents contenus pédagogiques 24h/24, 7J/7 et peu importe le lieu où ils se trouvent. Ils peuvent ainsi se former dans le domaine qui les intéresse, et ce, toujours à leur rythme." textFill="#9a9292" wrapText="true">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="680.0" layoutY="285.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="145.0" styleClass="button4" stylesheets="@fullpackstyling.css" text="Donate Now" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="642.0" layoutY="381.0" text="E-ducation+" textFill="#feaf31">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="581.0" layoutY="381.0" text="About" textFill="#5b5b5b">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="46.0" fitWidth="46.0" layoutX="84.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/swr.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="134.0" layoutY="29.0" text="E-ducation+" textFill="#5b5b5b">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

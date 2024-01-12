@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.front.InscriptionController">
+   <children>
+      <BorderPane prefHeight="700.0" prefWidth="440.0" styleClass="linear-grad" stylesheets="@css/fullpackstyling.css">
+         <center>
+            <ImageView fitHeight="263.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@images/swr.png" />
+               </image>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <Pane layoutX="350.0" prefHeight="700.0" prefWidth="701.0">
+         <children>
+            <TextField fx:id="mail" layoutX="289.0" layoutY="187.0" prefHeight="35.0" prefWidth="237.0" promptText="Email">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <Button fx:id="btnupp" layoutX="396.0" layoutY="570.0" mnemonicParsing="false" onAction="#ajouteruser" prefHeight="35.0" prefWidth="130.0" styleClass="button4" stylesheets="@css/fullpackstyling.css" text="Sign up" textFill="#fffdf0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="123.0" layoutY="22.0" opacity="0.5" prefHeight="138.0" prefWidth="311.0" text="Sign Up">
+               <font>
+                  <Font size="80.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="pwd1" layoutX="289.0" layoutY="399.0" prefHeight="35.0" prefWidth="237.0" promptText="Password">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </PasswordField>
+            <TextField fx:id="tel" layoutX="289.0" layoutY="510.0" prefHeight="35.0" prefWidth="237.0" promptText="Telephone">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="country" layoutX="289.0" layoutY="456.0" prefHeight="35.0" prefWidth="237.0" promptText="Country">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="username" layoutX="289.0" layoutY="241.0" prefHeight="35.0" prefWidth="237.0" promptText="Username">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="nom" layoutX="289.0" layoutY="296.0" prefHeight="35.0" prefWidth="237.0" promptText="First name">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="prenom" layoutX="289.0" layoutY="350.0" prefHeight="35.0" prefWidth="237.0" promptText="Last name">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+            </TextField>
+            <ImageView fx:id="back" fitHeight="92.0" fitWidth="92.0" layoutX="577.0" layoutY="14.0" onMousePressed="#back" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/left.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ComboBox fx:id="rolee" layoutX="123.0" layoutY="189.0" onAction="#comboBoxrole" prefWidth="150.0" />
+            <Label fx:id="choserole" layoutX="167.0" layoutY="595.0" text="Label" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

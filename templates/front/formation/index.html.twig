@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/courses.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/courses_responsive.css')}}">
+
+{% endblock %}
+{% block content %}
+    <!-- Home -->
+
+    <div class="home">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('front/images/courses.jpg')}}" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <br>
+                            <br>
+                            <div class="home_title">Formations</div>
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>Formations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses -->
+
+    <div class="courses">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="section_title text-center"><h2>
+                            Choisissez votre formation</h2></div>
+                    <div class="section_subtitle">Suspendisse tincidunt magna eget massa hendrerit efficitur. Ut euismod pellentesque imperdiet. Cras laoreet gravida lectus, at viverra lorem venenatis in. Aenean id varius quam. Nullam bibendum interdum dui, ac tempor lorem convallis ut</div>
+                </div>
+            </div>
+
+            <!-- Course Search -->
+            <div class="row">
+                <div class="col">
+                    <div class="course_search">
+                        <form method="get" class="course_search_form d-flex flex-md-row flex-column align-items-start justify-content-between row">
+                            <div class="col-8"><input type="text" name="filter" class="course_input" placeholder="Course" required="required"></div>
+                            <button type="submit" class="col-4 course_button"><span>Chercher une formation</span><span class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row courses_row">
+                {% for cour in formations %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="course">
+                        <div class="course_image"><img src="/formation/{{ cour.image }}" alt=""></div>
+                        <div class="course_body">
+                            <div class="course_header d-flex flex-row align-items-center justify-content-start">
+                            </div>
+                            <div class="course_title"><h3><a href="{{ path('training_show', {'id': cour.id}) }}">{{ cour.titre }}</a></h3></div>
+                            <div class="course_text">{{ cour.First100 }}</div>
+                            <div class="course_footer d-flex align-items-center justify-content-start">
+                                <div class="course_author_image"></div>
+                                <div class="course_author_name">By <a href="#">{{ cour.formateur }}</a></div>
+                                <div class="course_sales ml-auto"><span>{{ cour.placeDispo }}</span> Place disponible</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

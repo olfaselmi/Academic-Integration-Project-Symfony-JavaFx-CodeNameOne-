@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/about.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('front/styles/about_responsive.css')}}">
+
+{% endblock %}
+{% block content %}
+    <!-- Home -->
+    <!-- Home -->
+
+    <div class="home">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div class="home_background parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('front/images/about.jpg')}}" data-speed="0.8"></div>
+        <div class="home_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="home_content text-center">
+                            <br>
+                            <br>
+                            <div class="home_title">{{ cours.titre }}</div>
+                            <div class="breadcrumbs">
+                                <ul>
+                                    <li><a href="{{ path('courses') }}">Cours</a></li>
+                                    <li>{{ cours.titre }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+
+    <div class="about">
+        <div class="container">
+            <div class="row about_row row-lg-eq-height">
+                <div class="col-lg-6">
+                    <div class="about_content">
+                        <div class="about_title">{{ cours.titre }}</div>
+
+                        <div class="about_text">
+
+                            <p>{{ cours.contenu }}</p>
+
+
+
+                            <div class="featured_header d-flex flex-row align-items-center justify-content-start">
+                                <div style="color: #ff8a00"><a >Date Début : {{ cours.dateD|date('d-m-Y') }} <i class="fa fa-clock-o"></i> - Date Fin : {{ cours.dateF|date('d-m-Y') }} <i class="fa fa-clock-o"></i></a></div>
+                            </div>
+                            <div class="featured_header d-flex flex-row align-items-center justify-content-start">
+                                <div class="featured_price ml-auto" style="font-weight: bold">{{ cours.enseignant }}<i class="fa fa-pencil"></i><span></span></div>
+                            </div>
+
+                            <br>
+                            <a class="btn btn-outline-primary" href="/cours/{{ cours.file }}"><i class="fa fa-file-pdf-o"></i> Support de cours</a>
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about_image"><img src="/cours/{{ cours.image }}" alt="https://unsplash.com/@jtylernix"></div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

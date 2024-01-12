@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="validation1.FXMLDocumentController">
+    <children>
+        <Button fx:id="button_ajouter" layoutX="405.0" layoutY="408.0" onAction="#ajoutecour" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+        <Label fx:id="label_ajouter" layoutX="23.0" layoutY="162.0" minHeight="16" minWidth="69" text="Ajouter Cours  " textAlignment="CENTER" textFill="#b92121" wrapText="true">
+         <font>
+            <Font name="System Bold" size="39.0" />
+         </font></Label>
+      <TextField fx:id="dateFE" layoutX="367.0" layoutY="184.0" promptText="Date fin" />
+      <TextField fx:id="dateDE" layoutX="367.0" layoutY="129.0" promptText="Date debut" />
+      <TextField fx:id="contenuE" layoutX="367.0" layoutY="76.0" promptText="Contenu" />
+      <TextField fx:id="placeDispoE" layoutX="367.0" layoutY="237.0" promptText="Place disponible" />
+      <TextField fx:id="idEnseigE" layoutX="367.0" layoutY="289.0" promptText="Id enseignant " />
+      <TextField fx:id="emploiE" layoutX="367.0" layoutY="345.0" promptText="Emploi" />
+    </children>
+</AnchorPane>

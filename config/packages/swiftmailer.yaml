@@ -1,0 +1,7 @@
+swiftmailer:
+    transport:        smtp
+    username:         courseesprit
+    password:         '13001074'
+    host:             smtp.gmail.com
+    port:             587
+    auth-mode:        login

@@ -1,0 +1,104 @@
+{% extends 'baseadmin.html.twig' %}
+{% block pageHeading %}
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Formateurs</h1>
+    </div>
+{% endblock %}
+{% block content %}
+
+    <link href="{{asset('back/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">La liste des formateurs</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTables" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Salaire</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Domaines</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Salaire</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Domaines</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for forma in formateurs %}
+                        <tr>
+                            <td>{{ forma.utilisateur.nom }}</td>
+                            <td>{{ forma.utilisateur.prenom }}</td>
+                            <td>{{ forma.salaire }} </td>
+                            <td>{{ forma.utilisateur.tel }}</td>
+                            <td>{{ forma.utilisateur.email }}</td>
+                            <td>{{ forma.domaines }}</td>
+
+                            <td>
+                                <a href="{{ path('admin_formateur_domaine_form', {'id': forma.id}) }}" class="btn btn-warning"><i class="fas fa-list-alt"></i> </a>
+                            </td>
+
+                        </tr>
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script src="{{asset('back/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('back/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('back/js/demo/datatables-demo.js')}}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables').DataTable({
+                "ordering": false,
+                "bPaginate": false,
+                "stripeClasses": [],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Trouver un formateur",
+                },
+                dom: 'Bfrtip',
+            });
+
+
+        });
+    </script>
+{% endblock %}

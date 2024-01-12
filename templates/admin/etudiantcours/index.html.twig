@@ -1,0 +1,129 @@
+{% extends 'baseadmin.html.twig' %}
+{% block pageHeading %}
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">La liste des etudiants</h1>
+        <a  href="{{ path('admin_etudiant_cours_form', {'id': cours.id}) }}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                    class="fas fa-download fa-sm text-white-50"></i> Ajouter un etudiant</a>
+    </div>
+{% endblock %}
+{% block content %}
+
+    <link href="{{asset('back/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('warning') %}
+        <div class="alert alert-warning">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">La liste des etudiants inscrit dans le cours " {{ cours.titre}} "</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTables" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Niveau</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Niveau</th>
+                        <th>Telephone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% for etufor in liste %}
+                    <tr>
+                        <td>{{ etufor.etudiant.utilisateur.nom }}</td>
+                        <td>{{ etufor.etudiant.utilisateur.prenom }}</td>
+                        <td>{{ etufor.etudiant.niveau }} </td>
+                        <td>{{ etufor.etudiant.utilisateur.tel }}</td>
+                        <td>{{ etufor.etudiant.utilisateur.email }}</td>
+
+                        <td>
+                            <a data-toggle="modal"
+                               data-target="#confirmdelete{{ etufor.id }}" class="btn btn-danger"><i class="fa fa-trash"></i> </a>
+                        </td>
+
+                    </tr>
+                        <div class="modal fade" id="confirmdelete{{ etufor.id }}" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-dark" id="exampleModalLabel">Supprimer Inscription</h5>
+                                        <button class="close" type="button" data-dismiss="modal"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body text-dark">
+                                        Sélectionnez «Confirmer» ci-dessous si vous êtes prêt à  supprimer cette inscription
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a class="btn btn-success"
+                                           href="{{ path('admin_etudiant_cours_delete', {'id': etufor.id}) }}"
+                                           id="inactivePayment">Confirmer</a>
+                                        <button class="btn btn-danger" type="button" data-dismiss="modal">
+                                            Annuler
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script src="{{asset('back/vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('back/vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    <script src="{{asset('back/js/demo/datatables-demo.js')}}"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dataTables').DataTable({
+                "ordering": false,
+                "bPaginate": false,
+                "stripeClasses": [],
+                responsive: true,
+                language: {
+                    search: "_INPUT_",
+                    searchPlaceholder: "Trouver un etudiant",
+                },
+                dom: 'Bfrtip',
+            });
+
+
+        });
+    </script>
+{% endblock %}
